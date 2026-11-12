@@ -1,5 +1,5 @@
 {
-  "name": "vinylpocket",
+  "name": "my-music-ios-html",
   "compatibility_date": "2026-11-12",
   "routes": [
     { "pattern": "vinylpocket.annibao.top", "custom_domain": true }

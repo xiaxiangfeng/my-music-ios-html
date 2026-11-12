@@ -1,11 +1,20 @@
-# VinylPocket 推广网站
+# App 推广网站
 
-`docs/` 是静态站点目录，包含英文首页、`zh-cn/` 简体中文首页，以及帮助和隐私页面。两版首页共用样式和素材。
+VinylPocket 的网页位于 `docs/`，A Little Lighter 的网页位于 `docs/a-little-lighter/`。两个 Cloudflare Worker 连接同一个 GitHub 仓库，各自在子域名根目录提供英文首页。
 
-## 发布与 Google 收录
+## Cloudflare 部署
 
-站点地址沿用 App Store 隐私政策链接所在的目录。若改用其他域名或目录，发布前同步更新 HTML 里的 `canonical`、`hreflang`、Open Graph 网址和 `sitemap.xml`。
+在管理 `annibao.top` 的 Cloudflare 账户中，分别将两个 Worker 连接到 `xiaxiangfeng/my-music-ios-html` 的 `main` 分支。构建命令留空，部署命令为 `npx wrangler deploy`。
 
-1. 将 `docs/` 下的内容发布到网站目录。[站点地址](https://home.annibao.top/my-music-ios-html/)
-2. 确认两版首页、样式、图片和 `sitemap.xml` 可从公网通过 HTTPS 匿名访问，并返回 HTTP 200。如果主机根目录有 `robots.txt`，确认其中的规则允许抓取这些页面和资源。
-3. 在 Google Search Console 验证站点的 URL 前缀并提交 `sitemap.xml`，再用「网址检查」对两版首页请求编入索引。[Search Console](https://search.google.com/search-console) · [Sitemap](https://home.annibao.top/my-music-ios-html/sitemap.xml)
+| Worker 名称 | Root directory | 子域名 | 中文首页 |
+| --- | --- | --- | --- |
+| `vinylpocket` | 仓库根目录 | `vinylpocket.annibao.top` | `/zh-cn/` |
+| `a-little-lighter` | `workers/a-little-lighter` | `a-little-lighter.annibao.top` | `/zh-Hans/` |
+
+Wrangler 配置中的 `routes` 负责绑定子域名。若实际使用其他子域名，同步更新相应配置、页面里的绝对网址和 `sitemap.xml`。
+
+## 上线与收录
+
+1. 确认两个子域名的中英文首页、帮助、隐私页面和站点地图均可通过 HTTPS 访问。
+2. 确保 App Store 已填写的旧支持或隐私链接仍可访问。迁移旧站时，在原托管服务将旧链接重定向到各自的新页面。
+3. 在 Google Search Console 提交两个站点地图，再用「网址检查」对四个首页请求编入索引。[VinylPocket 站点地图](https://vinylpocket.annibao.top/sitemap.xml) · [A Little Lighter 站点地图](https://a-little-lighter.annibao.top/sitemap.xml)

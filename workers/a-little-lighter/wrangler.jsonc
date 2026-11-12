@@ -1,0 +1,11 @@
+{
+  "name": "a-little-lighter",
+  "compatibility_date": "2026-11-12",
+  "routes": [
+    { "pattern": "a-little-lighter.annibao.top", "custom_domain": true }
+  ],
+  "assets": {
+    "directory": "../../docs/a-little-lighter",
+    "html_handling": "auto-trailing-slash"
+  }
+}

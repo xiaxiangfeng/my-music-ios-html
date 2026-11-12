@@ -1,0 +1,11 @@
+{
+  "name": "vinylpocket",
+  "compatibility_date": "2026-11-12",
+  "routes": [
+    { "pattern": "vinylpocket.annibao.top", "custom_domain": true }
+  ],
+  "assets": {
+    "directory": "./docs",
+    "html_handling": "auto-trailing-slash"
+  }
+}

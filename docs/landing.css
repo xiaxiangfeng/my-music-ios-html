@@ -167,6 +167,13 @@ h3 {
 
 .hero-actions { margin-top: 1.875rem; }
 
+.store-options {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 1rem;
+}
+
 .store-link {
   display: inline-flex;
   align-items: center;
@@ -294,6 +301,8 @@ h3 {
   font-size: 0.9375rem;
   font-weight: 650;
 }
+
+.store-options .text-link { margin-top: 0; }
 
 .faq-list { border-bottom: 1px solid var(--line); }
 .faq-list details { border-top: 1px solid var(--line); }

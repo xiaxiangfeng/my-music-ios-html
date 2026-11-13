@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to Play Music from a WebDAV NAS on iPhone | VinylPocket</title>
+  <meta name="description" content="Connect a WebDAV NAS to VinylPocket on iPhone, add music from your folders, and play downloaded tracks offline. Includes fixes for common connection issues.">
+  <link rel="canonical" href="https://vinylpocket.annibao.top/guides/webdav-nas-music-iphone/">
+  <link rel="icon" type="image/png" sizes="96x96" href="../../assets/vinylpocket-icon.png">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../"><span class="record" aria-hidden="true"></span>VinylPocket</a>
+    <nav aria-label="Main navigation"><a href="../../support.html">Support</a></nav>
+  </header>
+  <main>
+    <article>
+      <h1>How to Play Music from a WebDAV NAS on iPhone</h1>
+      <p>VinylPocket can browse music folders on your NAS over HTTPS WebDAV and add tracks to your iPhone’s record collection. The first time you play a NAS track, VinylPocket downloads the whole file. Once it’s cached, you can play it again offline.</p>
+
+      <section aria-labelledby="requirements">
+        <h2 id="requirements">What you’ll need</h2>
+        <ul>
+          <li>VinylPocket on an iPhone running iOS 18 or later.</li>
+          <li>A WebDAV music folder your iPhone can reach, with an HTTPS address and a certificate trusted by iOS. Use the folder URL, such as <code>https://nas.example.com/music/</code>.</li>
+          <li>A NAS username and password with permission to read the folder if your server requires Basic authentication.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="connect">
+        <h2 id="connect">Connect your NAS and add music</h2>
+        <ol>
+          <li>Open VinylPocket and choose <strong>VINYL MODE → Connect NAS · WebDAV</strong>.</li>
+          <li>Give the source a name, enter the HTTPS WebDAV folder address, and fill in your credentials if required. Tap <strong>Connect</strong>.</li>
+          <li>Open <strong>Record Collection → Sources</strong> and choose the NAS you just added. Browse to a music folder, then tap a track to add it or choose <strong>Add All</strong> to add the audio files in that folder.</li>
+          <li>Go back to your collection and select a track. Keep the connection to your NAS active until the track starts playing and is marked <strong>Cached</strong> in the collection.</li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="offline">
+        <h2 id="offline">Listen offline</h2>
+        <p>Before leaving your network, play each track you want to take with you and let its first download finish. Check the <strong>Cached</strong> label in your collection, then try playing a cached track again with your iPhone disconnected. Adding a track or tapping <strong>Add All</strong> saves it to your collection, so it still needs a first play to download.</p>
+        <p>If you use <strong>Sources → Clear Cloud Cache</strong>, those NAS tracks need to download again. MP3s you imported from Files have their own local copies.</p>
+      </section>
+
+      <section aria-labelledby="troubleshoot">
+        <h2 id="troubleshoot">If your NAS won’t connect</h2>
+        <ul>
+          <li><strong>Address or certificate error:</strong> Check that you entered the HTTPS WebDAV folder URL. Use your WebDAV endpoint rather than the NAS sign-in page or an SMB share address.</li>
+          <li><strong>Access denied (401 or 403):</strong> Check your username and password, and make sure that user can list and read the music folder.</li>
+          <li><strong>Works at home but not away:</strong> If your NAS is available only on your home network, download the tracks there first. You can play those cached tracks anywhere.</li>
+        </ul>
+      </section>
+
+      <p>Have MP3s in Files or iCloud Drive? See <a href="../play-local-mp3-offline-iphone/">how to import them for offline playback</a>.</p>
+      <p><a href="https://apps.apple.com/us/app/vinylpocket-music-player/id6820082772">View VinylPocket on the U.S. App Store</a></p>
+    </article>
+  </main>
+  <footer><a href="../../">VinylPocket</a> · <a href="../../support.html">Support</a> · <a href="../../privacy.html">Privacy Policy</a></footer>
+</body>
+</html>

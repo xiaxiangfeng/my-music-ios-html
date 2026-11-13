@@ -198,6 +198,9 @@ h2 { font-size: clamp(2.6rem, 4.5vw, 4.3rem); line-height: 1.03; letter-spacing:
 }
 .privacy p { max-width: 31em; margin-top: 14px; }
 .text-link { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; margin-top: 9px; color: var(--blue); font-weight: 700; text-decoration: underline; text-underline-offset: .23em; }
+.feature-copy .text-link { margin-top: 8px; font-size: .91rem; }
+.privacy .privacy-guide { margin-top: 5px; }
+.privacy-guide .text-link { margin-top: 0; }
 .privacy-points { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
 .privacy-points li { display: flex; align-items: center; gap: 11px; min-height: 48px; padding: 10px 14px; border-radius: 8px; background: #fafcf0; font-weight: 700; }
 .privacy-points li span { color: var(--blue); }

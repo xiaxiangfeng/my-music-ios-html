@@ -2,5 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://a-little-lighter.annibao.top/</loc></url>
   <url><loc>https://a-little-lighter.annibao.top/zh-Hans/</loc></url>
+<<<<<<< HEAD
   <url><loc>https://a-little-lighter.annibao.top/guides/offline-weight-tracking-iphone/</loc></url>
+=======
+  <url><loc>https://a-little-lighter.annibao.top/guides/export-weight-log-csv-iphone/</loc></url>
+  <url><loc>https://a-little-lighter.annibao.top/guides/share-weight-progress-privately-iphone/</loc></url>
+>>>>>>> refs/remotes/origin/main
 </urlset>

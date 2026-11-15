@@ -86,6 +86,11 @@ function regionPicker(language, method) {
   });
 }
 
+function browserRegion(acceptLanguage) {
+  const languageTag = acceptLanguage?.split(/[,;]/, 1)[0].trim();
+  return languageTag?.match(/^[a-z]{2,3}(?:-[a-z]{4})?-([a-z]{2})(?:-|$)/i)?.[1].toUpperCase();
+}
+
 export default {
   fetch(request, env) {
     const url = new URL(request.url);
@@ -98,8 +103,11 @@ export default {
     }
 
     const language = url.searchParams.get("lang") === "zh-Hans" ? "zh-Hans" : "en";
-    const region = (url.searchParams.get("region") ?? request.cf?.country)?.toUpperCase();
-    if (url.searchParams.get("choose") === "1" || !storefronts.has(region)) {
+    const selectedRegion = url.searchParams.get("region");
+    const region = (selectedRegion ?? request.cf?.country)?.toUpperCase();
+    const preferredRegion = browserRegion(request.headers.get("Accept-Language"));
+    const regionConflict = selectedRegion === null && storefronts.has(preferredRegion) && preferredRegion !== region;
+    if (url.searchParams.get("choose") === "1" || !storefronts.has(region) || regionConflict) {
       return regionPicker(language, request.method);
     }
 

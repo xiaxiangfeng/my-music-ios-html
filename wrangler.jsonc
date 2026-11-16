@@ -1,11 +1,13 @@
 {
   "name": "my-music-ios-html",
+  "main": "./workers/vinylpocket/app-store.js",
   "compatibility_date": "2026-11-12",
   "routes": [
     { "pattern": "vinylpocket.annibao.top", "custom_domain": true }
   ],
   "assets": {
     "directory": "./docs",
+    "binding": "ASSETS",
     "html_handling": "auto-trailing-slash"
   }
 }
